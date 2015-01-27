@@ -3,11 +3,11 @@
 # install make and other build tool
 sudo pkgin -y install build-essential
 
-sudo mkdir -p /opt/<%= appName %>/
-sudo mkdir -p /opt/<%= appName %>/config
-sudo mkdir -p /opt/<%= appName %>/tmp
+sudo mkdir -p <%= deployPath %>/<%= appName %>/
+sudo mkdir -p <%= deployPath %>/<%= appName %>/config
+sudo mkdir -p <%= deployPath %>/<%= appName %>/tmp
 
-sudo chown ${USER} /opt/<%= appName %> -R
+sudo chown ${USER} <%= deployPath %>/<%= appName %> -R
 sudo chown ${USER} /etc/init
 sudo chown ${USER} /etc/
 

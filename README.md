@@ -100,10 +100,14 @@ This will create two files in your Meteor Up project directory:
   // Application name (no spaces).
   "appName": "meteor",
 
-  // Location of app (local directory). This can reference '~' as the users home directory.
-  // i.e., "app": "~/Meteor/my-app",
-  // This is the same as the line below.
-  "app": "/Users/arunoda/Meteor/my-app",
+  // Deploy path on the servers (same path for all servers).
+  // If not defined it defaults to '/opt'. Make sure you have no trailing slash !
+  // "deployPath": "/srv/meteor",
+
+  // Location of the app directory on your own machine (local).
+  // This can reference '~' as the users home directory.
+  // If omitted, it will use the current path where you execute 'mup deploy'
+  // "app": "/Users/arunoda/Meteor/my-app",
 
   // Configure environment
   "env": {

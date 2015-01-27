@@ -47,7 +47,7 @@ revert_app (){
 # logic
 set -e
 
-TMP_DIR=/opt/<%= appName %>/tmp
+TMP_DIR=<%= deployPath %>/<%= appName %>/tmp
 BUNDLE_DIR=${TMP_DIR}/bundle
 
 cd ${TMP_DIR}
@@ -69,7 +69,7 @@ else
   sudo npm install bcrypt
 fi
 
-cd /opt/<%= appName %>/
+cd <%= deployPath %>/<%= appName %>/
 
 # remove old app, if it exists
 if [ -d old_app ]; then
@@ -85,7 +85,7 @@ sudo mv tmp/bundle app
 
 #wait and check
 echo "Waiting for MongoDB to initialize. (5 minutes)"
-. /opt/<%= appName %>/config/env.sh
+. <%= deployPath %>/<%= appName %>/config/env.sh
 wait-for-mongo ${MONGO_URL} 300000
 
 # restart app
